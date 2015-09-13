@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>bvirUI/bvirUI.qml</file>
+        <file>bvirUI/description.ini</file>
+        <file>bvirUI/ApplicationToolBar.qml</file>
+        <file>bvirUI/FontIcon.qml</file>
+        <file>bvirUI/icons/MaterialIcons-Regular.ttf</file>
+        <file>bvirUI/OptionalStopAction.qml</file>
+        <file>bvirUI/Test.qml</file>
+        <file>bvirUI/ConfigTab.qml</file>
+        <file>bvirUI/CommandTab.qml</file>
+    </qresource>
+</RCC>
