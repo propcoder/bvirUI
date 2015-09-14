@@ -58,7 +58,7 @@ HalApplicationWindow {
 
     ApplicationCore {
         id: applicationCore
-//        notifications: applicationNotifications
+        notifications: applicationNotifications
         applicationName: "bvirUI"
     }
 
@@ -199,8 +199,12 @@ HalApplicationWindow {
                 anchors.top: hlb_a.bottom
                 Layout.columnSpan: 2
             }
-
-
+            ApplicationNotifications {
+                id: applicationNotifications
+                anchors.fill: parent
+                anchors.margins: 2
+                messageWidth: parent.width
+            }
         }
         TabView {
             id: tabview
@@ -217,7 +221,6 @@ HalApplicationWindow {
                 anchors.margins: parent.width * 0.01
                 onLoaded: cmdtab.active = true // Forcing to create tabs on startup
             }
-
             CommandTab {
                 id: cmdtab
                 anchors.margins: parent.width * 0.01
@@ -231,7 +234,6 @@ HalApplicationWindow {
             }
             Tab {
                 title: qsTr("Išjungti")
-
                 onActiveChanged: {
                     shutdownaction.trigger()
                     main.disconnect()
