@@ -6,7 +6,7 @@
         <file>bvirUI/ApplicationToolBar.qml</file>
         <file>bvirUI/FontIcon.qml</file>
         <file>bvirUI/icons/MaterialIcons-Regular.ttf</file>
-        <file>bvirUI/OptionalStopAction.qml</file>
+        <file>bvirUI/MyOptionalStopAction.qml</file>
         <file>bvirUI/Test.qml</file>
         <file>bvirUI/ConfigTab.qml</file>
         <file>bvirUI/CommandTab.qml</file>

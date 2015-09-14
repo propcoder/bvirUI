@@ -79,6 +79,7 @@ HalApplicationWindow {
             ApplicationToolBar {
                 id: toolbar
                 anchors.fill: parent
+                anchors.margins: 1
 //                width: parent.width
 //                height: parent.height
             }
@@ -208,16 +209,33 @@ HalApplicationWindow {
             anchors.right: parent.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-
-            CommandTab {
-                id: cmdtab
-                anchors.margins: parent.width * 0.01
-                onLoaded: cfgtab.active = true
+            ShutdownAction {
+                id: shutdownaction
             }
             ConfigTab {
                 id: cfgtab
                 anchors.margins: parent.width * 0.01
-                onLoaded: cmdtab.active = true
+                onLoaded: cmdtab.active = true // Forcing to create tabs on startup
+            }
+
+            CommandTab {
+                id: cmdtab
+                anchors.margins: parent.width * 0.01
+                onLoaded: cfgtab.active = true // Forcing to create tabs on startup
+            }
+            Tab {
+                title: qsTr("Atsijungti")
+                onActiveChanged: {
+                    main.disconnect()
+                }
+            }
+            Tab {
+                title: qsTr("Išjungti")
+
+                onActiveChanged: {
+                    shutdownaction.trigger()
+                    main.disconnect()
+                }
             }
         }
     }

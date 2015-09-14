@@ -92,42 +92,15 @@ Rectangle {
                 text: "\ue047"; color: systemPalette.light
             }
         }
-
         TouchButton {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
+            action : OptionalStopAction { }
             iconSource: ""
-            checkable: true
-            FontIcon { // pause???
+            FontIcon { // stop
                 text: "\ue036"; color: systemPalette.light
             }
-
-            HalPin {
-                id: hp_os_ison
-                name: "hp_os_ison"
-                type: HalPin.Bit
-                direction: HalPin.In
-            }
-            HalPin {
-                id: hp_os_on
-                name: "hp_os_on"
-                type: HalPin.Bit
-                direction: HalPin.Out
-                value: parent.checked
-            }
-            HalPin {
-                id: hp_os_off
-                name: "hp_os_off"
-                type: HalPin.Bit
-                direction: HalPin.Out
-                value: !parent.checked
-            }
-            onCheckedChanged: {
-                hp_os_on.value = checked
-                hp_os_off.value = !checked
-            }
-            checked: _ready && (hp_os_ison.value)
         }
     }
 }
